@@ -1,0 +1,113 @@
+{
+  "topic": {
+    "slug": "probabilidade",
+    "name": "Probabilidade"
+  },
+  "questions": [
+    {
+      "id": "prob-01",
+      "difficulty": 1,
+      "statement": "Um dado comum, de 6 faces, é lançado uma vez.",
+      "prompt": "Qual a probabilidade de sair um número primo?",
+      "options": [
+        "1/2",
+        "5/6",
+        "1/6",
+        "2/3",
+        "1/3"
+      ],
+      "correct_index": 0,
+      "explanation": "Os primos de 1 a 6 são 2, 3 e 5: 3 casos em 6, ou seja, 1/2."
+    },
+    {
+      "id": "prob-02",
+      "difficulty": 1,
+      "statement": "Dois dados comuns são lançados.",
+      "prompt": "Qual a probabilidade de a soma ser 7?",
+      "options": [
+        "1/12",
+        "1/4",
+        "7/36",
+        "1/6",
+        "1/9"
+      ],
+      "correct_index": 3,
+      "explanation": "Há 36 resultados possíveis e 6 dão soma 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1). 6/36 = 1/6."
+    },
+    {
+      "id": "prob-03",
+      "difficulty": 2,
+      "statement": "Uma urna tem 3 bolas vermelhas e 2 azuis. Retiram-se 2 bolas, uma depois da outra, sem devolver.",
+      "prompt": "Qual a probabilidade de as duas serem vermelhas?",
+      "options": [
+        "3/5",
+        "3/10",
+        "1/2",
+        "9/25",
+        "2/5"
+      ],
+      "correct_index": 1,
+      "explanation": "Primeira vermelha: 3/5. Sobram 2 vermelhas em 4 bolas: 2/4. Multiplicando: 3/5 × 1/2 = 3/10."
+    },
+    {
+      "id": "prob-04",
+      "difficulty": 2,
+      "statement": "Uma moeda honesta é lançada 3 vezes.",
+      "prompt": "Qual a probabilidade de sair pelo menos uma cara?",
+      "options": [
+        "7/8",
+        "3/8",
+        "3/4",
+        "5/8",
+        "1/2"
+      ],
+      "correct_index": 0,
+      "explanation": "É mais fácil calcular o contrário: nenhuma cara (coroa, coroa, coroa) tem chance 1/8. Logo, 1 − 1/8 = 7/8."
+    },
+    {
+      "id": "prob-05",
+      "difficulty": 3,
+      "statement": "Sorteia-se um número inteiro de 1 a 30.",
+      "prompt": "Qual a probabilidade de ele ser múltiplo de 3 ou de 5?",
+      "options": [
+        "7/15",
+        "8/15",
+        "1/2",
+        "1/3",
+        "2/5"
+      ],
+      "correct_index": 0,
+      "explanation": "Múltiplos de 3: 10. Múltiplos de 5: 6. Os múltiplos de 15 (15 e 30) foram contados duas vezes. 10 + 6 − 2 = 14, e 14/30 = 7/15."
+    },
+    {
+      "id": "prob-06",
+      "difficulty": 3,
+      "statement": "Em uma turma, 60% das pessoas são mulheres. Usam óculos 25% das mulheres e 50% dos homens.",
+      "prompt": "Sorteando uma pessoa da turma, qual a probabilidade de ela usar óculos?",
+      "options": [
+        "75%",
+        "35%",
+        "37,5%",
+        "30%",
+        "40%"
+      ],
+      "correct_index": 1,
+      "explanation": "Mulheres de óculos: 60% × 25% = 15%. Homens de óculos: 40% × 50% = 20%. Total: 15% + 20% = 35%."
+    },
+    {
+      "id": "prob-07",
+      "difficulty": 2,
+      "statement": "Dois dados comuns são lançados.",
+      "prompt": "Qual a probabilidade de o produto dos resultados ser par?",
+      "options": [
+        "1/4",
+        "3/4",
+        "2/3",
+        "1/2",
+        "5/6"
+      ],
+      "correct_index": 1,
+      "explanation": "O produto só é ímpar se os dois forem ímpares: 1/2 × 1/2 = 1/4. Logo, par = 1 − 1/4 = 3/4."
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "topic": {
+    "slug": "sequenciasFiguras",
+    "name": "Sequências de figuras"
+  },
+  "questions": [
+    {
+      "id": "fig-01",
+      "difficulty": 1,
+      "statement": "Observe a sequência: ▲ ■ ● ▲ ■ ● ▲ ?",
+      "prompt": "Qual figura completa a sequência?",
+      "options": [
+        "▲",
+        "■",
+        "●",
+        "◆",
+        "★"
+      ],
+      "correct_index": 1,
+      "explanation": "As figuras se repetem em grupos de três: ▲ ■ ●. A 8ª é a 2ª do grupo: ■."
+    },
+    {
+      "id": "fig-02",
+      "difficulty": 1,
+      "statement": "A seta gira sempre da mesma forma: ↑ → ↓ ← ↑ ?",
+      "prompt": "Qual é a próxima posição?",
+      "options": [
+        "↗",
+        "↑",
+        "↓",
+        "←",
+        "→"
+      ],
+      "correct_index": 4,
+      "explanation": "A seta gira 90° no sentido horário a cada passo. Depois de ↑ vem →."
+    },
+    {
+      "id": "fig-03",
+      "difficulty": 2,
+      "statement": "Observe: ↑ ↗ → ↘ ↓ ?",
+      "prompt": "Qual é a próxima seta?",
+      "options": [
+        "←",
+        "↙",
+        "↓",
+        "↘",
+        "↖"
+      ],
+      "correct_index": 1,
+      "explanation": "A seta gira 45° no sentido horário a cada passo. Depois de ↓ vem ↙."
+    },
+    {
+      "id": "fig-04",
+      "difficulty": 1,
+      "statement": "Observe: ★  |  ★★★  |  ★★★★★  |  ?",
+      "prompt": "Quantas estrelas tem a próxima figura?",
+      "options": [
+        "8",
+        "6",
+        "7",
+        "5",
+        "9"
+      ],
+      "correct_index": 2,
+      "explanation": "A quantidade cresce de 2 em 2: 1, 3, 5… a próxima tem 7."
+    },
+    {
+      "id": "fig-05",
+      "difficulty": 3,
+      "statement": "Observe: ▲ □ ● △ ■ ○ ?",
+      "prompt": "Qual figura vem a seguir?",
+      "options": [
+        "△",
+        "□",
+        "▲",
+        "○",
+        "■"
+      ],
+      "correct_index": 2,
+      "explanation": "Duas regras ao mesmo tempo: a forma segue triângulo, quadrado, círculo, e o preenchimento alterna cheio, vazio. A 7ª é um triângulo, na posição ímpar: cheio (▲)."
+    },
+    {
+      "id": "fig-06",
+      "difficulty": 3,
+      "statement": "Observe os pares: [↑ ↓]  [→ ←]  [↓ ↑]  [? ?]",
+      "prompt": "Qual par vem a seguir?",
+      "options": [
+        "← ↑",
+        "↑ ↓",
+        "← →",
+        "→ ←",
+        "↓ ↑"
+      ],
+      "correct_index": 2,
+      "explanation": "Em cada par a segunda seta aponta para o lado oposto da primeira, e a primeira seta gira 90° no sentido horário de um par para o outro: ↑, →, ↓, ←."
+    }
+  ]
+}

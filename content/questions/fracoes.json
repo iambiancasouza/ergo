@@ -1,0 +1,98 @@
+{
+  "topic": {
+    "slug": "fracoes",
+    "name": "Problemas com frações"
+  },
+  "questions": [
+    {
+      "id": "frac-01",
+      "difficulty": 1,
+      "statement": "João gastou 1/3 do salário com aluguel e 1/4 com mercado.",
+      "prompt": "Que fração do salário sobrou?",
+      "options": [
+        "2/7",
+        "1/2",
+        "7/12",
+        "1/12",
+        "5/12"
+      ],
+      "correct_index": 4,
+      "explanation": "1/3 + 1/4 = 4/12 + 3/12 = 7/12 gastos. Sobram 12/12 − 7/12 = 5/12."
+    },
+    {
+      "id": "frac-02",
+      "difficulty": 1,
+      "statement": "Em uma caixa, 2/5 das bolas são azuis, e há 18 bolas azuis.",
+      "prompt": "Quantas bolas há na caixa?",
+      "options": [
+        "45",
+        "36",
+        "30",
+        "40",
+        "54"
+      ],
+      "correct_index": 0,
+      "explanation": "Se 2/5 são 18, então 1/5 é 9, e o total (5/5) é 45."
+    },
+    {
+      "id": "frac-03",
+      "difficulty": 2,
+      "statement": "Maria leu 3/8 de um livro no primeiro dia e metade do que faltava no segundo dia.",
+      "prompt": "Que fração do livro ainda falta ler?",
+      "options": [
+        "1/4",
+        "5/8",
+        "5/16",
+        "3/16",
+        "1/8"
+      ],
+      "correct_index": 2,
+      "explanation": "Depois do 1º dia faltavam 5/8. Ela leu metade disso (5/16), então ainda faltam 5/16."
+    },
+    {
+      "id": "frac-04",
+      "difficulty": 2,
+      "statement": "Uma torneira enche um tanque em 6 horas, e outra enche o mesmo tanque em 3 horas.",
+      "prompt": "Abertas juntas, em quanto tempo enchem o tanque?",
+      "options": [
+        "4,5 horas",
+        "1,5 hora",
+        "2,5 horas",
+        "2 horas",
+        "3 horas"
+      ],
+      "correct_index": 3,
+      "explanation": "Por hora, a primeira enche 1/6 e a segunda 1/3 = 2/6. Juntas: 3/6 = 1/2 do tanque por hora, então 2 horas."
+    },
+    {
+      "id": "frac-05",
+      "difficulty": 3,
+      "statement": "Em uma herança, Ana recebeu metade. Bruno recebeu 1/3 do que sobrou, e Carla ficou com o restante, R$ 20.000.",
+      "prompt": "Qual era o valor total da herança?",
+      "options": [
+        "R$ 50.000",
+        "R$ 60.000",
+        "R$ 80.000",
+        "R$ 120.000",
+        "R$ 40.000"
+      ],
+      "correct_index": 1,
+      "explanation": "Depois de Ana sobra 1/2. Bruno leva 1/3 disso (1/6). Carla fica com 1/2 − 1/6 = 1/3 do total. Se 1/3 é R$ 20.000, o total é R$ 60.000."
+    },
+    {
+      "id": "frac-06",
+      "difficulty": 2,
+      "statement": "Considere as frações 3/4, 5/7, 7/9, 2/3 e 11/15.",
+      "prompt": "Qual é a maior?",
+      "options": [
+        "3/4",
+        "5/7",
+        "7/9",
+        "11/15",
+        "2/3"
+      ],
+      "correct_index": 2,
+      "explanation": "Em decimal: 3/4 = 0,75; 5/7 ≈ 0,714; 7/9 ≈ 0,778; 2/3 ≈ 0,667; 11/15 ≈ 0,733. A maior é 7/9."
+    }
+  ]
+}

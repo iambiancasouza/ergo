@@ -1,0 +1,98 @@
+{
+  "topic": {
+    "slug": "argumentacao",
+    "name": "Argumentação e silogismos"
+  },
+  "questions": [
+    {
+      "id": "arg-01",
+      "difficulty": 1,
+      "statement": "Todo A é B. Nenhum B é C.",
+      "prompt": "Qual conclusão é necessariamente verdadeira?",
+      "options": [
+        "Algum C é B.",
+        "Todo C é A.",
+        "Nenhum A é C.",
+        "Algum A é C.",
+        "Todo B é A."
+      ],
+      "correct_index": 2,
+      "explanation": "Todos os A estão dentro de B, e B não tem nada em comum com C. Logo, nenhum A pode ser C."
+    },
+    {
+      "id": "arg-02",
+      "difficulty": 2,
+      "statement": "Alguns médicos são músicos. Todos os músicos são criativos.",
+      "prompt": "Qual conclusão é necessariamente verdadeira?",
+      "options": [
+        "Alguns médicos são criativos.",
+        "Alguns criativos não são médicos.",
+        "Todos os médicos são criativos.",
+        "Nenhum médico é criativo.",
+        "Todos os criativos são músicos."
+      ],
+      "correct_index": 0,
+      "explanation": "Os médicos que são músicos são, por serem músicos, criativos. Então pelo menos alguns médicos são criativos."
+    },
+    {
+      "id": "arg-03",
+      "difficulty": 2,
+      "statement": "Todos os gatos são mamíferos. Alguns mamíferos voam.",
+      "prompt": "O que se pode concluir com certeza?",
+      "options": [
+        "Alguns gatos voam.",
+        "Todos os mamíferos são gatos.",
+        "Os mamíferos que voam são gatos.",
+        "Nada se pode concluir sobre gatos voarem.",
+        "Nenhum gato voa."
+      ],
+      "correct_index": 3,
+      "explanation": "Os mamíferos que voam podem ser outros animais (morcegos, por exemplo). As premissas não ligam gatos a voar."
+    },
+    {
+      "id": "arg-04",
+      "difficulty": 2,
+      "statement": "Se o alarme tocar, Rita acorda. Rita não acordou.",
+      "prompt": "O que se conclui?",
+      "options": [
+        "Rita acordará depois.",
+        "Nada se pode concluir.",
+        "O alarme tocou.",
+        "O alarme não tocou.",
+        "O alarme está quebrado."
+      ],
+      "correct_index": 3,
+      "explanation": "Se p → q e q é falso, então p é falso (modus tollens). Se o alarme tivesse tocado, Rita teria acordado."
+    },
+    {
+      "id": "arg-05",
+      "difficulty": 3,
+      "statement": "Se o alarme tocar, Rita acorda. Rita acordou.",
+      "prompt": "O que se conclui com certeza?",
+      "options": [
+        "O alarme tocará amanhã.",
+        "Nada se pode concluir sobre o alarme.",
+        "O alarme não tocou.",
+        "O alarme tocou.",
+        "Rita acorda só com o alarme."
+      ],
+      "correct_index": 1,
+      "explanation": "Rita pode ter acordado por outro motivo. Concluir que o alarme tocou é um erro comum, chamado afirmação do consequente."
+    },
+    {
+      "id": "arg-06",
+      "difficulty": 3,
+      "statement": "Nenhum político é honesto. Alguns honestos são advogados.",
+      "prompt": "Qual conclusão é necessariamente verdadeira?",
+      "options": [
+        "Alguns advogados não são políticos.",
+        "Alguns políticos são advogados.",
+        "Todos os advogados são honestos.",
+        "Nenhum advogado é político.",
+        "Todos os honestos são advogados."
+      ],
+      "correct_index": 0,
+      "explanation": "Os advogados honestos não podem ser políticos (nenhum político é honesto). Então pelo menos alguns advogados não são políticos."
+    }
+  ]
+}

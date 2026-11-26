@@ -1,0 +1,113 @@
+{
+  "topic": {
+    "slug": "sequenciasPalavras",
+    "name": "Palavras e analogias"
+  },
+  "questions": [
+    {
+      "id": "pal-01",
+      "difficulty": 2,
+      "statement": "Observe: SOL, CASA, JANELA, BORBOLETA, …",
+      "prompt": "Qual palavra continua a sequência?",
+      "options": [
+        "ELEFANTE",
+        "CADERNO",
+        "TELEFONE",
+        "MATEMÁTICA",
+        "BICICLETA"
+      ],
+      "correct_index": 3,
+      "explanation": "O número de vogais cresce de 1 em 1: SOL (1), CASA (2), JANELA (3), BORBOLETA (4). MATEMÁTICA tem 5."
+    },
+    {
+      "id": "pal-02",
+      "difficulty": 1,
+      "statement": "Observe: CASA → AMOR → RATO → ORELHA → …",
+      "prompt": "Qual palavra continua a sequência?",
+      "options": [
+        "MALA",
+        "LUA",
+        "RIO",
+        "ABACAXI",
+        "BOLA"
+      ],
+      "correct_index": 3,
+      "explanation": "Cada palavra começa com a última letra da anterior. ORELHA termina em A, e a única opção que começa com A é ABACAXI."
+    },
+    {
+      "id": "pal-03",
+      "difficulty": 1,
+      "statement": "Observe: ABELHA, CAVALO, ELEFANTE, GATO, …",
+      "prompt": "Qual palavra continua a sequência?",
+      "options": [
+        "IGUANA",
+        "LEÃO",
+        "JACARÉ",
+        "FOCA",
+        "HIENA"
+      ],
+      "correct_index": 0,
+      "explanation": "As iniciais pulam uma letra: A, C, E, G… a próxima é I."
+    },
+    {
+      "id": "pal-04",
+      "difficulty": 1,
+      "statement": "Considere a palavra AMOR.",
+      "prompt": "Qual das palavras abaixo NÃO é um anagrama de AMOR?",
+      "options": [
+        "OMAR",
+        "ROMA",
+        "RAMO",
+        "MURO",
+        "MORA"
+      ],
+      "correct_index": 3,
+      "explanation": "Anagramas usam exatamente as mesmas letras. MURO tem U e não tem A."
+    },
+    {
+      "id": "pal-05",
+      "difficulty": 1,
+      "statement": "Pé está para meia assim como mão está para…",
+      "prompt": "Qual palavra completa a analogia?",
+      "options": [
+        "dedo",
+        "unha",
+        "luva",
+        "braço",
+        "anel"
+      ],
+      "correct_index": 2,
+      "explanation": "A meia é o que se veste no pé; a luva é o que se veste na mão."
+    },
+    {
+      "id": "pal-06",
+      "difficulty": 2,
+      "statement": "Livro está para biblioteca assim como quadro está para…",
+      "prompt": "Qual palavra completa a analogia?",
+      "options": [
+        "museu",
+        "tinta",
+        "moldura",
+        "pintor",
+        "parede"
+      ],
+      "correct_index": 0,
+      "explanation": "A biblioteca é o lugar onde se reúnem e expõem livros; o museu é o lugar onde se reúnem e expõem quadros."
+    },
+    {
+      "id": "pal-07",
+      "difficulty": 2,
+      "statement": "As palavras ARARA, OVO, RADAR e SALAS têm algo em comum.",
+      "prompt": "Qual palavra também tem essa característica?",
+      "options": [
+        "AMORA",
+        "RIVAL",
+        "MELÃO",
+        "SOPAS",
+        "REVIVER"
+      ],
+      "correct_index": 4,
+      "explanation": "Todas são palíndromos: leem-se igual de trás para frente. REVIVER também é."
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/* Tokens visuais do Ergo (CLAUDE.md → Visual). Viram utilitários do Tailwind:
+   bg-bg, text-fg, text-fg-muted, text-fg-subtle, text-accent, text-success,
+   text-danger, font-display, font-sans. */
+@theme {
+  --color-bg: #121116;
+  --color-fg: #f3f1f8;
+  --color-fg-muted: #c9c4d6;
+  --color-fg-subtle: #b3aec2;
+  --color-accent: #b8a6f0;
+  --color-accent-deep: #5f469d;
+  --color-success: #7fd1a8;
+  --color-danger: #f0a97a;
+
+  --color-glass: rgb(255 255 255 / 0.05);
+  --color-glass-border: rgb(255 255 255 / 0.12);
+
+  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    background-color: var(--color-bg);
+    /* Rolagem mantida, barra escondida (Firefox). */
+    scrollbar-width: none;
+  }
+
+  /* Rolagem mantida, barra escondida (Chrome, Safari, Edge). */
+  *::-webkit-scrollbar {
+    display: none;
+  }
+  * {
+    scrollbar-width: none;
+  }
+
+  body {
+    min-height: 100dvh;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Brilhos do fundo: fixos, atrás de tudo, sem interferir em cliques. */
+  body::before,
+  body::after {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    border-radius: 9999px;
+    pointer-events: none;
+  }
+  body::before {
+    top: -10rem;
+    left: -8rem;
+    width: 28rem;
+    height: 28rem;
+    background: rgb(184 166 240 / 0.2);
+    filter: blur(110px);
+  }
+  body::after {
+    right: -10rem;
+    bottom: -8rem;
+    width: 32rem;
+    height: 32rem;
+    background: rgb(95 70 157 / 0.26);
+    filter: blur(120px);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+}
+
+/* Cartão de vidro. Atenção (Safari): não animar opacity num ancestral de um
+   elemento .glass, porque o backdrop-filter some durante a animação. */
+@utility glass {
+  background: var(--color-glass);
+  border: 1px solid var(--color-glass-border);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.1);
+}
+
+/* Quem pede menos movimento não recebe transições nem animações em CSS.
+   As do Framer Motion respeitam isso pelo MotionConfig (fase 1). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

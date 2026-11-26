@@ -1,0 +1,143 @@
+{
+  "topic": {
+    "slug": "sequenciasNumericas",
+    "name": "Sequências numéricas"
+  },
+  "questions": [
+    {
+      "id": "num-01",
+      "difficulty": 1,
+      "statement": "Observe a sequência: 3, 7, 15, 31, 63, …",
+      "prompt": "Qual é o próximo termo?",
+      "options": [
+        "128",
+        "125",
+        "127",
+        "131",
+        "126"
+      ],
+      "correct_index": 2,
+      "explanation": "Cada termo é o dobro do anterior mais 1: 63 × 2 + 1 = 127."
+    },
+    {
+      "id": "num-02",
+      "difficulty": 2,
+      "statement": "Observe a sequência: 2, 3, 5, 9, 17, …",
+      "prompt": "Qual é o próximo termo?",
+      "options": [
+        "31",
+        "25",
+        "33",
+        "34",
+        "35"
+      ],
+      "correct_index": 2,
+      "explanation": "As diferenças dobram: +1, +2, +4, +8, então a próxima é +16: 17 + 16 = 33."
+    },
+    {
+      "id": "num-03",
+      "difficulty": 1,
+      "statement": "Observe a sequência: 2, 5, 10, 17, 26, …",
+      "prompt": "Qual é o próximo termo?",
+      "options": [
+        "37",
+        "38",
+        "35",
+        "36",
+        "41"
+      ],
+      "correct_index": 0,
+      "explanation": "Cada termo é um quadrado perfeito mais 1: 1²+1, 2²+1, …, 6²+1 = 37."
+    },
+    {
+      "id": "num-04",
+      "difficulty": 2,
+      "statement": "Observe a sequência: 5, 10, 8, 16, 14, 28, …",
+      "prompt": "Qual é o próximo termo?",
+      "options": [
+        "32",
+        "56",
+        "30",
+        "24",
+        "26"
+      ],
+      "correct_index": 4,
+      "explanation": "As operações se alternam: ×2, −2, ×2, −2… Depois de 28 vem 28 − 2 = 26."
+    },
+    {
+      "id": "num-05",
+      "difficulty": 2,
+      "statement": "Observe a sequência: 1, 20, 3, 17, 5, 14, 7, …",
+      "prompt": "Qual é o próximo termo?",
+      "options": [
+        "13",
+        "11",
+        "9",
+        "12",
+        "10"
+      ],
+      "correct_index": 1,
+      "explanation": "São duas sequências intercaladas: 1, 3, 5, 7 (+2) e 20, 17, 14 (−3). O próximo é da segunda: 14 − 3 = 11."
+    },
+    {
+      "id": "num-06",
+      "difficulty": 1,
+      "statement": "Observe a sequência: 1, 3, 4, 7, 11, 18, …",
+      "prompt": "Qual é o próximo termo?",
+      "options": [
+        "36",
+        "27",
+        "25",
+        "28",
+        "29"
+      ],
+      "correct_index": 4,
+      "explanation": "Cada termo é a soma dos dois anteriores: 11 + 18 = 29."
+    },
+    {
+      "id": "num-07",
+      "difficulty": 2,
+      "statement": "Observe a sequência: 6, 11, 21, 36, 56, …",
+      "prompt": "Qual é o próximo termo?",
+      "options": [
+        "81",
+        "76",
+        "80",
+        "77",
+        "86"
+      ],
+      "correct_index": 0,
+      "explanation": "As diferenças crescem de 5 em 5: +5, +10, +15, +20, então +25: 56 + 25 = 81."
+    },
+    {
+      "id": "num-08",
+      "difficulty": 2,
+      "statement": "Observe a sequência: 2, 6, 24, 120, …",
+      "prompt": "Qual é o próximo termo?",
+      "options": [
+        "240",
+        "480",
+        "720",
+        "840",
+        "600"
+      ],
+      "correct_index": 2,
+      "explanation": "Multiplica-se por 3, por 4, por 5… O próximo é 120 × 6 = 720."
+    },
+    {
+      "id": "num-09",
+      "difficulty": 3,
+      "statement": "Observe a sequência: 4, 6, 9, 13,5, …",
+      "prompt": "Qual é o próximo termo?",
+      "options": [
+        "19,5",
+        "22,5",
+        "20,25",
+        "18",
+        "20"
+      ],
+      "correct_index": 2,
+      "explanation": "Cada termo é o anterior multiplicado por 1,5: 13,5 × 1,5 = 20,25."
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "topic": {
+    "slug": "verdadeMentira",
+    "name": "Verdade e mentira"
+  },
+  "questions": [
+    {
+      "id": "vm-01",
+      "difficulty": 1,
+      "statement": "Um vaso foi quebrado por uma de três crianças. Apenas uma delas diz a verdade.",
+      "prompt": "Quem quebrou o vaso?",
+      "options": [
+        "Não é possível saber",
+        "Ana ou Beto",
+        "Caio",
+        "Beto",
+        "Ana"
+      ],
+      "correct_index": 2,
+      "explanation": "Teste cada hipótese. Se foi Ana ou Beto, duas frases seriam verdadeiras. Se foi Caio, só a de Beto é verdadeira. Logo, foi Caio.",
+      "premises": [
+        "Ana: “Foi o Beto.”",
+        "Beto: “Não fui eu.”",
+        "Caio: “Não fui eu.”"
+      ]
+    },
+    {
+      "id": "vm-02",
+      "difficulty": 2,
+      "statement": "Em uma ilha, cavaleiros sempre dizem a verdade e valetes sempre mentem. A diz: “Pelo menos um de nós dois é valete.”",
+      "prompt": "O que são A e B?",
+      "options": [
+        "A é cavaleiro e B é valete",
+        "Os dois são cavaleiros",
+        "Os dois são valetes",
+        "Não é possível saber",
+        "A é valete e B é cavaleiro"
+      ],
+      "correct_index": 0,
+      "explanation": "Se A fosse valete, a frase seria verdadeira (ele mesmo é valete), e valete não diz verdade. Então A é cavaleiro, a frase é verdadeira e B é valete."
+    },
+    {
+      "id": "vm-03",
+      "difficulty": 3,
+      "statement": "Cada pessoa abaixo sempre diz a verdade ou sempre mente.",
+      "prompt": "Quem diz a verdade?",
+      "options": [
+        "Apenas Alex",
+        "Alex e Caio",
+        "Apenas Caio",
+        "Apenas Bia",
+        "Ninguém"
+      ],
+      "correct_index": 3,
+      "explanation": "Se Caio dissesse a verdade, Alex e Bia mentiriam; mas Alex mentindo significa que Bia diz a verdade, contradição. Logo Caio mente, então Bia diz a verdade (Caio mente) e Alex mente (Bia não mente).",
+      "premises": [
+        "Alex: “Bia mente.”",
+        "Bia: “Caio mente.”",
+        "Caio: “Alex e Bia mentem.”"
+      ]
+    },
+    {
+      "id": "vm-04",
+      "difficulty": 3,
+      "statement": "Um dos quatro amigos comeu o último pedaço de bolo. Exatamente um deles mente.",
+      "prompt": "Quem comeu o bolo?",
+      "options": [
+        "Não é possível saber",
+        "Otávio",
+        "Nara",
+        "Lucas",
+        "Marcos"
+      ],
+      "correct_index": 1,
+      "explanation": "Se foi Marcos, ninguém mentiria. Se foi Lucas ou Nara, três mentiriam. Só com Otávio há exatamente uma mentira (a de Lucas).",
+      "premises": [
+        "Lucas: “Foi o Marcos.”",
+        "Marcos: “Não foi o Lucas.”",
+        "Nara: “Foi o Otávio ou o Marcos.”",
+        "Otávio: “Não foi a Nara.”"
+      ]
+    },
+    {
+      "id": "vm-05",
+      "difficulty": 2,
+      "statement": "Um de três irmãos esqueceu a porta aberta. Só um deles fala a verdade.",
+      "prompt": "Quem esqueceu a porta aberta?",
+      "options": [
+        "Bruno",
+        "André ou Cecília",
+        "André",
+        "Não é possível saber",
+        "Cecília"
+      ],
+      "correct_index": 0,
+      "explanation": "Se foi André, Bruno e Cecília diriam a verdade (duas verdades). Se foi Cecília, André e Bruno diriam a verdade (duas). Se foi Bruno, só André diz a verdade. Logo, foi Bruno.",
+      "premises": [
+        "André: “Não fui eu.”",
+        "Bruno: “Não fui eu.”",
+        "Cecília: “Foi o André.”"
+      ]
+    }
+  ]
+}

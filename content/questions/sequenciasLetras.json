@@ -1,0 +1,113 @@
+{
+  "topic": {
+    "slug": "sequenciasLetras",
+    "name": "Sequências de letras"
+  },
+  "questions": [
+    {
+      "id": "let-01",
+      "difficulty": 2,
+      "statement": "Considere o alfabeto de 26 letras (com K, W e Y). Observe: A, C, F, J, O, …",
+      "prompt": "Qual é a próxima?",
+      "options": [
+        "Q",
+        "T",
+        "S",
+        "U",
+        "V"
+      ],
+      "correct_index": 3,
+      "explanation": "Os saltos crescem: +2, +3, +4, +5, então +6. O (15ª) + 6 = U (21ª)."
+    },
+    {
+      "id": "let-02",
+      "difficulty": 1,
+      "statement": "Considere o alfabeto de 26 letras (com K, W e Y). Observe: A, B, D, G, K, …",
+      "prompt": "Qual é a próxima?",
+      "options": [
+        "O",
+        "N",
+        "Q",
+        "R",
+        "P"
+      ],
+      "correct_index": 4,
+      "explanation": "Saltos de +1, +2, +3, +4, então +5. K (11ª) + 5 = P (16ª)."
+    },
+    {
+      "id": "let-03",
+      "difficulty": 2,
+      "statement": "Considere o alfabeto de 26 letras (com K, W e Y). Observe: Z, X, U, Q, L, …",
+      "prompt": "Qual é a próxima?",
+      "options": [
+        "G",
+        "D",
+        "F",
+        "H",
+        "E"
+      ],
+      "correct_index": 2,
+      "explanation": "Andando para trás: −2, −3, −4, −5, então −6. L (12ª) − 6 = F (6ª)."
+    },
+    {
+      "id": "let-04",
+      "difficulty": 1,
+      "statement": "Considere o alfabeto de 26 letras (com K, W e Y). Observe: AZ, BY, CX, DW, …",
+      "prompt": "Qual é a próxima?",
+      "options": [
+        "FV",
+        "EV",
+        "EU",
+        "EW",
+        "DV"
+      ],
+      "correct_index": 1,
+      "explanation": "A primeira letra avança no alfabeto (A, B, C, D, E) e a segunda recua a partir do fim (Z, Y, X, W, V)."
+    },
+    {
+      "id": "let-05",
+      "difficulty": 1,
+      "statement": "Considere o alfabeto de 26 letras (com K, W e Y). Observe: ACE, BDF, CEG, …",
+      "prompt": "Qual é a próxima?",
+      "options": [
+        "DEF",
+        "DFH",
+        "CFH",
+        "DFG",
+        "EGI"
+      ],
+      "correct_index": 1,
+      "explanation": "Cada grupo pula uma letra (A_C_E) e o grupo seguinte começa uma letra adiante: ACE, BDF, CEG, DFH."
+    },
+    {
+      "id": "let-06",
+      "difficulty": 1,
+      "statement": "Considere o alfabeto de 26 letras (com K, W e Y). Observe: A1, C3, E5, G7, …",
+      "prompt": "Qual é a próxima?",
+      "options": [
+        "H8",
+        "I10",
+        "I9",
+        "I8",
+        "J9"
+      ],
+      "correct_index": 2,
+      "explanation": "As letras pulam de 2 em 2 (A, C, E, G, I) e o número acompanha a posição da letra no alfabeto: I é a 9ª."
+    },
+    {
+      "id": "let-07",
+      "difficulty": 3,
+      "statement": "Considere o alfabeto de 26 letras (com K, W e Y). Observe: B, E, J, Q, …",
+      "prompt": "Qual é a próxima?",
+      "options": [
+        "W",
+        "Z",
+        "Y",
+        "U",
+        "X"
+      ],
+      "correct_index": 1,
+      "explanation": "As posições são 2, 5, 10, 17: quadrados mais 1 (1²+1, 2²+1, 3²+1, 4²+1). A próxima é 5²+1 = 26: Z."
+    }
+  ]
+}

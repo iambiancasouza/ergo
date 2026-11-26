@@ -1,0 +1,113 @@
+{
+  "topic": {
+    "slug": "porcentagem",
+    "name": "Porcentagem"
+  },
+  "questions": [
+    {
+      "id": "pct-01",
+      "difficulty": 1,
+      "statement": "Um produto custava R$ 200. O preço subiu 10% e, depois, caiu 10%.",
+      "prompt": "Qual é o preço final?",
+      "options": [
+        "R$ 180",
+        "R$ 202",
+        "R$ 200",
+        "R$ 198",
+        "R$ 196"
+      ],
+      "correct_index": 3,
+      "explanation": "200 × 1,1 = 220. Depois, 220 × 0,9 = 198. Os 10% de queda incidem sobre um valor maior."
+    },
+    {
+      "id": "pct-02",
+      "difficulty": 2,
+      "statement": "Uma loja dá um desconto de 20% e, sobre o novo preço, mais 10%.",
+      "prompt": "Qual é o desconto total equivalente?",
+      "options": [
+        "25%",
+        "30%",
+        "28%",
+        "27%",
+        "32%"
+      ],
+      "correct_index": 2,
+      "explanation": "Sobra 0,8 × 0,9 = 0,72 do preço. Logo, o desconto total é 28%, e não 30%."
+    },
+    {
+      "id": "pct-03",
+      "difficulty": 1,
+      "statement": "Um salário passou de R$ 2.500 para R$ 2.800.",
+      "prompt": "De quantos por cento foi o aumento?",
+      "options": [
+        "300%",
+        "15%",
+        "10%",
+        "12%",
+        "11%"
+      ],
+      "correct_index": 3,
+      "explanation": "O aumento foi de R$ 300. 300 ÷ 2.500 = 0,12 = 12%."
+    },
+    {
+      "id": "pct-04",
+      "difficulty": 2,
+      "statement": "Após um desconto de 25%, um produto passou a custar R$ 150.",
+      "prompt": "Qual era o preço original?",
+      "options": [
+        "R$ 180",
+        "R$ 200",
+        "R$ 187,50",
+        "R$ 225",
+        "R$ 175"
+      ],
+      "correct_index": 1,
+      "explanation": "R$ 150 corresponde a 75% do preço. 150 ÷ 0,75 = R$ 200. (Somar 25% de 150 daria R$ 187,50, que está errado.)"
+    },
+    {
+      "id": "pct-05",
+      "difficulty": 1,
+      "statement": "Uma turma tem 40 alunos, e 35% são meninos.",
+      "prompt": "Quantas são as meninas?",
+      "options": [
+        "28",
+        "24",
+        "14",
+        "26",
+        "25"
+      ],
+      "correct_index": 3,
+      "explanation": "Meninos: 35% de 40 = 14. Meninas: 40 − 14 = 26."
+    },
+    {
+      "id": "pct-06",
+      "difficulty": 2,
+      "statement": "A população de uma cidade cresceu 20% em um ano e mais 20% no ano seguinte.",
+      "prompt": "Qual foi o crescimento total nos dois anos?",
+      "options": [
+        "24%",
+        "42%",
+        "44%",
+        "48%",
+        "40%"
+      ],
+      "correct_index": 2,
+      "explanation": "1,2 × 1,2 = 1,44. O crescimento total foi de 44%."
+    },
+    {
+      "id": "pct-07",
+      "difficulty": 1,
+      "statement": "Calcule 30% de 40% de 500.",
+      "prompt": "Qual é o resultado?",
+      "options": [
+        "60",
+        "150",
+        "120",
+        "70",
+        "35"
+      ],
+      "correct_index": 0,
+      "explanation": "40% de 500 = 200. 30% de 200 = 60."
+    }
+  ]
+}

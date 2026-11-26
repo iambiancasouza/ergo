@@ -1,0 +1,128 @@
+{
+  "topic": {
+    "slug": "proposicoes",
+    "name": "Proposições e conectivos"
+  },
+  "questions": [
+    {
+      "id": "prop-01",
+      "difficulty": 2,
+      "statement": "Considere a proposição: “Se estudo, então passo.”",
+      "prompt": "Qual proposição é equivalente a ela?",
+      "options": [
+        "Estudo e não passo.",
+        "Estudo ou passo.",
+        "Se passo, então estudo.",
+        "Se não passo, então não estudo.",
+        "Se não estudo, então não passo."
+      ],
+      "correct_index": 3,
+      "explanation": "A condicional p → q equivale à contrapositiva ¬q → ¬p. Inverter (q → p) ou só negar (¬p → ¬q) não preserva o sentido."
+    },
+    {
+      "id": "prop-02",
+      "difficulty": 2,
+      "statement": "Considere a proposição: “Se chove, então levo guarda-chuva.”",
+      "prompt": "Qual é a negação dela?",
+      "options": [
+        "Não chove e levo guarda-chuva.",
+        "Não chove ou não levo guarda-chuva.",
+        "Chove e não levo guarda-chuva.",
+        "Se não chove, então não levo guarda-chuva.",
+        "Se chove, então não levo guarda-chuva."
+      ],
+      "correct_index": 2,
+      "explanation": "A condicional só é falsa quando a primeira parte acontece e a segunda não. Por isso, ¬(p → q) é p ∧ ¬q."
+    },
+    {
+      "id": "prop-03",
+      "difficulty": 1,
+      "statement": "Considere a proposição: “Hoje chove e faz frio.”",
+      "prompt": "Qual é a negação dela?",
+      "options": [
+        "Hoje chove ou faz frio.",
+        "Hoje não chove ou não faz frio.",
+        "Hoje chove e não faz frio.",
+        "Se hoje chove, então não faz frio.",
+        "Hoje não chove e não faz frio."
+      ],
+      "correct_index": 1,
+      "explanation": "Pela lei de De Morgan, ¬(p ∧ q) = ¬p ∨ ¬q: basta uma das partes falhar."
+    },
+    {
+      "id": "prop-04",
+      "difficulty": 1,
+      "statement": "Considere a proposição: “Todo aluno estuda.”",
+      "prompt": "Qual é a negação dela?",
+      "options": [
+        "Nenhum aluno estuda.",
+        "Algum aluno não estuda.",
+        "Algum aluno estuda.",
+        "Nenhum aluno não estuda.",
+        "Todo aluno não estuda."
+      ],
+      "correct_index": 1,
+      "explanation": "Para desmentir “todo aluno estuda”, basta um aluno que não estude. A negação de “todo” é “algum… não”."
+    },
+    {
+      "id": "prop-05",
+      "difficulty": 1,
+      "statement": "Considere a proposição: “Nenhum gato é preto.”",
+      "prompt": "Qual é a negação dela?",
+      "options": [
+        "Algum gato não é preto.",
+        "Algum gato é preto.",
+        "Todo gato é preto.",
+        "Nenhum gato é branco.",
+        "Todo gato não é preto."
+      ],
+      "correct_index": 1,
+      "explanation": "Para desmentir “nenhum gato é preto”, basta existir um gato preto. A negação de “nenhum” é “algum”."
+    },
+    {
+      "id": "prop-06",
+      "difficulty": 2,
+      "statement": "Sabe-se que p é verdadeira, q é falsa e r é verdadeira.",
+      "prompt": "Qual é o valor lógico de (p → q) ∨ ¬r?",
+      "options": [
+        "Depende de q",
+        "Não é possível determinar",
+        "Verdadeiro",
+        "Depende de p",
+        "Falso"
+      ],
+      "correct_index": 4,
+      "explanation": "p → q é V → F, que é falso. ¬r é falso. Falso ∨ falso = falso."
+    },
+    {
+      "id": "prop-07",
+      "difficulty": 3,
+      "statement": "Uma tautologia é uma proposição sempre verdadeira, qualquer que seja o valor de suas partes.",
+      "prompt": "Qual das opções é uma tautologia?",
+      "options": [
+        "p ↔ q",
+        "(p ∧ q) → p",
+        "p → q",
+        "p ∨ q",
+        "p ∧ ¬p"
+      ],
+      "correct_index": 1,
+      "explanation": "Se p ∧ q é verdadeira, p é verdadeira; se p ∧ q é falsa, a condicional já é verdadeira. Em todos os casos dá verdadeiro."
+    },
+    {
+      "id": "prop-08",
+      "difficulty": 1,
+      "statement": "Considere a condicional p → q.",
+      "prompt": "Em qual situação ela é FALSA?",
+      "options": [
+        "Ela nunca é falsa",
+        "p falsa e q verdadeira",
+        "p e q falsas",
+        "p e q verdadeiras",
+        "p verdadeira e q falsa"
+      ],
+      "correct_index": 4,
+      "explanation": "A condicional promete que, se p acontecer, q acontece. Ela só é quebrada quando p acontece e q não."
+    }
+  ]
+}
