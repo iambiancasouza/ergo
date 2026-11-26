@@ -1,0 +1,39 @@
+# Mantém o projeto do Supabase ativo: o plano gratuito pausa após 7 dias sem
+# atividade. A cada 3 dias, chama a função public.keep_alive() pela API REST
+# (migração 20261126172407_keepAliveFunction.sql).
+#
+# Secrets usados (Settings → Secrets and variables → Actions):
+#   SUPABASE_URL              ex.: https://<ref>.supabase.co (sem /rest/v1)
+#   SUPABASE_PUBLISHABLE_KEY  chave sb_publishable_…
+#
+# Para testar na hora: aba Actions → "Keep Supabase alive" → Run workflow.
+
+name: Keep Supabase alive
+
+on:
+  schedule:
+    # 12:00 UTC nos dias 1, 4, 7, …, 31 de cada mês. O maior intervalo entre
+    # duas execuções é de 3 dias, bem abaixo do limite de 7.
+    - cron: "0 12 */3 * *"
+  workflow_dispatch:
+
+# O workflow não precisa de nenhuma permissão no repositório.
+permissions: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Chamar keep_alive no Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+        run: |
+          curl --fail-with-body --silent --show-error \
+            --retry 3 --retry-all-errors --retry-delay 10 \
+            --request POST "${SUPABASE_URL%/}/rest/v1/rpc/keep_alive" \
+            --header "apikey: ${SUPABASE_PUBLISHABLE_KEY}" \
+            --header "Content-Type: application/json" \
+            --data '{}'
+          echo
