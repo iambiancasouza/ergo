@@ -1,0 +1,8 @@
+# Todo arquivo de texto fica com fim de linha LF no repositório e na pasta,
+# em qualquer sistema. Evita os avisos LF/CRLF do Git no Windows e diffs
+# "fantasmas" de linhas que só mudaram o fim de linha.
+* text=auto eol=lf
+
+# Binários: nunca converter.
+*.png binary
+*.ico binary
