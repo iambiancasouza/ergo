@@ -44,3 +44,6 @@ next-env.d.ts
 # instruções locais para agentes de IA (não versionadas)
 CLAUDE.md
 AGENTS.md
+
+.claude/
+docs/

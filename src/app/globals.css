@@ -1,8 +1,5 @@
 @import "tailwindcss";
 
-/* Tokens visuais do Ergo (CLAUDE.md → Visual). Viram utilitários do Tailwind:
-   bg-bg, text-fg, text-fg-muted, text-fg-subtle, text-accent, text-success,
-   text-danger, font-display, font-sans. */
 @theme {
   --color-bg: #121116;
   --color-fg: #f3f1f8;
@@ -24,11 +21,9 @@
   html {
     color-scheme: dark;
     background-color: var(--color-bg);
-    /* Rolagem mantida, barra escondida (Firefox). */
     scrollbar-width: none;
   }
 
-  /* Rolagem mantida, barra escondida (Chrome, Safari, Edge). */
   *::-webkit-scrollbar {
     display: none;
   }
@@ -37,6 +32,8 @@
   }
 
   body {
+    /* Barra de status translúcida do app instalado: o conteúdo não fica atrás dela. */
+    padding-top: env(safe-area-inset-top);
     min-height: 100dvh;
     background-color: var(--color-bg);
     color: var(--color-fg);
@@ -44,7 +41,6 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* Brilhos do fundo: fixos, atrás de tudo, sem interferir em cliques. */
   body::before,
   body::after {
     content: "";
@@ -75,10 +71,26 @@
   h3 {
     font-family: var(--font-display);
   }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
 }
 
-/* Cartão de vidro. Atenção (Safari): não animar opacity num ancestral de um
-   elemento .glass, porque o backdrop-filter some durante a animação. */
+/* Espaço da navegação só quando ela está na página; :has() evita depender do JS dela. */
+body:has([data-app-nav]) .app-content {
+  padding-bottom: calc(6rem + env(safe-area-inset-bottom));
+}
+
+@media (width >= 80rem) {
+  body:has([data-app-nav]) .app-content {
+    padding-bottom: 0;
+    padding-left: 16rem;
+  }
+}
+
+/* Safari: não animar opacity num ancestral de .glass, ou o desfoque some. */
 @utility glass {
   background: var(--color-glass);
   border: 1px solid var(--color-glass-border);
@@ -87,15 +99,72 @@
   box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.1);
 }
 
-/* Quem pede menos movimento não recebe transições nem animações em CSS.
-   As do Framer Motion respeitam isso pelo MotionConfig (fase 1). */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+/* Tela de abertura. Tempos (2 × 1,8 s + 0,4 s de saída) iguais ao splashDurationMs do SplashScreen.tsx. */
+html[data-splash-seen] .splash-screen {
+  display: none;
+}
+
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  pointer-events: none;
+  animation: splash-out 0.4s ease-out 3.6s forwards;
+}
+
+.splash-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-fg);
+}
+
+.splash-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0.35;
+  transform: translateY(0) scale(0.75);
+  animation: splash-loading 1.8s ease-in-out 2 both;
+}
+
+/* Ordem: embaixo à esquerda (2ª no SVG) → topo (1ª) → embaixo à direita (3ª). */
+.splash-dot:nth-child(2) {
+  animation-delay: 0s;
+}
+
+.splash-dot:nth-child(1) {
+  animation-delay: 0.6s;
+}
+
+.splash-dot:nth-child(3) {
+  animation-delay: 1.2s;
+}
+
+@keyframes splash-loading {
+  0%,
+  33%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0) scale(0.75);
+  }
+  12% {
+    opacity: 1;
+    transform: translateY(-7px) scale(1.15);
+  }
+  22% {
+    opacity: 0.85;
+    transform: translateY(1.5px) scale(0.98);
+  }
+}
+
+@keyframes splash-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
   }
 }
