@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "Boas-vindas" };
 
 export default function WelcomePage() {
   return (
-    <main className="mx-auto flex min-h-[calc(100dvh-env(safe-area-inset-top))] w-full max-w-md flex-col px-6 pb-[calc(3rem+env(safe-area-inset-bottom))]">
+    <main className="mx-auto flex min-h-[calc(100dvh-env(safe-area-inset-top))] w-full max-w-md flex-col px-6 pb-[calc(6rem+env(safe-area-inset-bottom))]">
       <div className="flex flex-1 flex-col items-center justify-center text-center">
         <svg width="80" height="80" viewBox="0 0 64 64" aria-hidden="true">
           <g fill="#B8A6F0">
@@ -19,8 +19,10 @@ export default function WelcomePage() {
         <p className="mt-3 font-display text-3xl font-bold tracking-tight">Ergo</p>
 
         <h1 className="mt-14 text-[28px] leading-tight font-bold tracking-tight">Boas-vindas ao Ergo</h1>
-        <p className="mt-4 text-[17px] leading-relaxed text-fg-muted">
-          Treine raciocínio lógico contra o relógio e revise o que errou no momento certo.
+        <p className="mt-8 text-[17px] leading-relaxed text-fg-muted">
+          Seu novo aliado para manter o raciocínio lógico afiado.
+          <br />
+          Estude de um jeito leve e divertido.
         </p>
       </div>
 
