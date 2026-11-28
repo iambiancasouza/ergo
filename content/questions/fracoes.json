@@ -1,7 +1,8 @@
 {
   "topic": {
     "slug": "fracoes",
-    "name": "Problemas com frações"
+    "name": "Problemas com frações",
+    "sort_order": 9
   },
   "questions": [
     {

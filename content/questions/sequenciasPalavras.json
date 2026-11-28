@@ -1,7 +1,8 @@
 {
   "topic": {
     "slug": "sequenciasPalavras",
-    "name": "Palavras e analogias"
+    "name": "Palavras e analogias",
+    "sort_order": 7
   },
   "questions": [
     {

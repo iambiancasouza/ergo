@@ -1,7 +1,8 @@
 {
   "topic": {
     "slug": "sequenciasFiguras",
-    "name": "Sequências de figuras"
+    "name": "Sequências de figuras",
+    "sort_order": 8
   },
   "questions": [
     {

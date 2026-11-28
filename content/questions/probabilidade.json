@@ -1,7 +1,8 @@
 {
   "topic": {
     "slug": "probabilidade",
-    "name": "Probabilidade"
+    "name": "Probabilidade",
+    "sort_order": 11
   },
   "questions": [
     {

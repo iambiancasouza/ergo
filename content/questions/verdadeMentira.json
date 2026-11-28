@@ -1,7 +1,8 @@
 {
   "topic": {
     "slug": "verdadeMentira",
-    "name": "Verdade e mentira"
+    "name": "Verdade e mentira",
+    "sort_order": 3
   },
   "questions": [
     {

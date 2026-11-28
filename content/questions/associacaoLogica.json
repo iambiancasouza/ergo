@@ -1,7 +1,8 @@
 {
   "topic": {
     "slug": "associacaoLogica",
-    "name": "Associação lógica"
+    "name": "Associação lógica",
+    "sort_order": 4
   },
   "questions": [
     {

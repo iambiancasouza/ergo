@@ -1,7 +1,8 @@
 {
   "topic": {
     "slug": "sequenciasLetras",
-    "name": "Sequências de letras"
+    "name": "Sequências de letras",
+    "sort_order": 6
   },
   "questions": [
     {

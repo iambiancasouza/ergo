@@ -1,17 +1,12 @@
-// Service worker do Ergo (mesma estratégia do WMS):
-// - páginas: sempre da internet (nunca versão velha); sem conexão, a tela offline;
-// - arquivos estáticos (código, fontes, ícones): da memória do aparelho;
-// - Supabase e outros sites: fora do service worker, sempre da internet.
-
-// Troque a versão quando mudar a estratégia de cache: o activate apaga os antigos.
+// Troque ao mudar a estratégia de cache: o activate apaga os caches antigos.
 const VERSION = "v1";
 const STATIC_CACHE = `ergo-static-${VERSION}`;
 const OFFLINE_URL = "/offline.html";
 
-// Guardados já na instalação: a tela offline e o ícone que ela usa.
+// O offline.html usa este ícone.
 const PRECACHE = [OFFLINE_URL, "/icons/icon192.png"];
 
-// Em desenvolvimento o código muda sem trocar de nome: nada de cache.
+// Em desenvolvimento o código muda sem trocar de nome.
 const isLocalhost = ["localhost", "127.0.0.1"].includes(self.location.hostname);
 
 self.addEventListener("install", (event) => {
@@ -38,13 +33,14 @@ self.addEventListener("activate", (event) => {
   );
 });
 
-// Código do app (os nomes mudam a cada deploy), fontes e ícones: nunca ficam
-// velhos, então podem vir direto da memória do aparelho.
+// Os arquivos do código mudam de nome a cada deploy, então o cache nunca fica velho.
+const STATIC_EXTENSIONS = [".png", ".jpg", ".jpeg", ".svg", ".webp", ".woff", ".woff2"];
+
 function isStaticAsset(url) {
   return (
     url.pathname.startsWith("/_next/static/") ||
     url.pathname.startsWith("/icons/") ||
-    /\.(png|jpg|jpeg|svg|webp|woff2?)$/.test(url.pathname)
+    STATIC_EXTENSIONS.some((extension) => url.pathname.endsWith(extension))
   );
 }
 
@@ -60,7 +56,6 @@ async function cacheFirst(request) {
   return response;
 }
 
-// Páginas: sempre da internet. Sem conexão, mostra a tela offline.
 async function networkFirstPage(request) {
   try {
     return await fetch(request);
@@ -74,7 +69,7 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET" || isLocalhost) return;
 
   const url = new URL(request.url);
-  // Dados do Supabase e outros sites: sempre direto da internet.
+  // Supabase e outros sites: sem cache.
   if (url.origin !== self.location.origin) return;
 
   if (request.mode === "navigate") {

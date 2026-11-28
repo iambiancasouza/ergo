@@ -1,7 +1,8 @@
 {
   "topic": {
     "slug": "argumentacao",
-    "name": "Argumentação e silogismos"
+    "name": "Argumentação e silogismos",
+    "sort_order": 2
   },
   "questions": [
     {

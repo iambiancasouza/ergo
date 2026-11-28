@@ -1,7 +1,8 @@
 {
   "topic": {
     "slug": "sequenciasNumericas",
-    "name": "Sequências numéricas"
+    "name": "Sequências numéricas",
+    "sort_order": 5
   },
   "questions": [
     {

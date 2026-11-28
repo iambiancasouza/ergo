@@ -1,7 +1,8 @@
 {
   "topic": {
     "slug": "proposicoes",
-    "name": "Proposições e conectivos"
+    "name": "Proposições e conectivos",
+    "sort_order": 1
   },
   "questions": [
     {
