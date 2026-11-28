@@ -12,7 +12,8 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "seed": "bun scripts/seed.ts"
+    "seed": "bun scripts/seed.ts",
+    "dbTypes": "supabase gen types --remote --schema public > src/types/database.types.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",

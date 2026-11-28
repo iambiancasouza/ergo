@@ -9,11 +9,11 @@ type AuthCardProps = {
 
 export function AuthCard({ title, subtitle, children }: AuthCardProps) {
   return (
-    <section className="relative flex flex-col gap-5 rounded-[28px] border border-white/14 bg-white/6 p-5 shadow-[0_20px_50px_rgb(0_0_0/0.45),inset_0_1px_0_rgb(255_255_255/0.14)] backdrop-blur-2xl backdrop-saturate-150 sm:p-6">
+    <section className="relative flex flex-col gap-5 rounded-[28px] border border-white/14 bg-surface p-5 shadow-[0_20px_50px_rgb(0_0_0/0.45),0_8px_28px_rgb(184_166_240/0.12),inset_0_1px_0_rgb(255_255_255/0.2)] sm:p-6">
       <Link
         href="/auth"
         aria-label="Voltar para as boas-vindas"
-        className="absolute top-4 left-4 flex size-11 items-center justify-center rounded-full border border-white/12 bg-white/6 text-fg shadow-[inset_0_1px_0_rgb(255_255_255/0.12)] sm:top-5 sm:left-5"
+        className="absolute top-4 left-4 flex size-11 items-center justify-center rounded-full border border-white/12 bg-surface text-fg shadow-[inset_0_1px_0_rgb(255_255_255/0.12)] sm:top-5 sm:left-5"
       >
         <svg
           width="20"

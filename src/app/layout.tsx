@@ -6,6 +6,7 @@ import { BottomNavbar } from "@/components/layout/BottomNavbar";
 import { ServiceWorkerRegistration } from "@/components/layout/ServiceWorkerRegistration";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { SplashScreen } from "@/components/layout/SplashScreen";
+import { Sparkles } from "@/components/layout/Sparkles";
 import { splashSeenKey } from "@/lib/splash";
 
 import "./globals.css";
@@ -54,6 +55,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             __html: `try{if(sessionStorage.getItem("${splashSeenKey}"))document.documentElement.dataset.splashSeen="1"}catch(e){}`,
           }}
         />
+
+        <Sparkles />
 
         {/* Obrigatório com cacheComponents: as barras usam usePathname. */}
         <Suspense fallback={null}>

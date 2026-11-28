@@ -7,9 +7,9 @@ import { ChartIcon, HomeIcon, TrainIcon, UserIcon } from "@/components/layout/Na
 
 const routes = [
   { href: "/", label: "Início", Icon: HomeIcon },
-  { href: "/treino", label: "Treinar", Icon: TrainIcon },
-  { href: "/placar", label: "Placar", Icon: ChartIcon },
-  { href: "/perfil", label: "Perfil", Icon: UserIcon },
+  { href: "/training", label: "Treinar", Icon: TrainIcon },
+  { href: "/scoreboard", label: "Placar", Icon: ChartIcon },
+  { href: "/profile", label: "Perfil", Icon: UserIcon },
 ];
 
 function isActive(pathname: string, href: string) {
@@ -20,13 +20,13 @@ function isActive(pathname: string, href: string) {
 export function Sidebar() {
   const pathname = usePathname();
 
-  if (pathname === "/auth" || pathname.startsWith("/auth/")) return null;
+  if (pathname === "/auth" || pathname.startsWith("/auth/") || pathname.startsWith("/training/") || pathname.startsWith("/result/")) return null;
 
   return (
     <nav
       aria-label="Principal"
       data-app-nav
-      className="fixed inset-y-0 left-0 z-40 hidden w-64 flex-col gap-10 border-r border-white/12 bg-[rgb(28_26_36/0.55)] shadow-[inset_-1px_0_0_rgb(255_255_255/0.04)] px-4 py-8 backdrop-blur-xl backdrop-saturate-150 xl:flex"
+      className="fixed inset-y-0 left-0 z-40 hidden w-64 flex-col gap-10 border-r border-white/12 bg-[color-mix(in_srgb,rgb(28_26_36)_55%,var(--color-bg))] shadow-[inset_-1px_0_0_rgb(255_255_255/0.04)] px-4 py-8 xl:flex"
     >
       <Link
         href="/"

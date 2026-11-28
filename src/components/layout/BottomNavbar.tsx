@@ -124,9 +124,9 @@ function UserIcon(props: AnimatedIconProps) {
 
 const routes = [
   { href: "/", label: "Início", Icon: HomeIcon },
-  { href: "/treino", label: "Treinar", Icon: TrainIcon },
-  { href: "/placar", label: "Placar", Icon: ChartIcon },
-  { href: "/perfil", label: "Perfil", Icon: UserIcon },
+  { href: "/training", label: "Treinar", Icon: TrainIcon },
+  { href: "/scoreboard", label: "Placar", Icon: ChartIcon },
+  { href: "/profile", label: "Perfil", Icon: UserIcon },
 ];
 
 function isActive(pathname: string, href: string) {
@@ -191,7 +191,7 @@ export function BottomNavbar() {
     );
   }
 
-  if (pathname === "/auth" || pathname.startsWith("/auth/")) return null;
+  if (pathname === "/auth" || pathname.startsWith("/auth/") || pathname.startsWith("/training/") || pathname.startsWith("/result/")) return null;
 
   return (
     <div

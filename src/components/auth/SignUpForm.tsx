@@ -16,18 +16,6 @@ function signUpWithTimezone(previous: AuthFormState, formData: FormData) {
 export function SignUpForm() {
   const [state, formAction, isPending] = useActionState<AuthFormState, FormData>(signUpWithTimezone, {});
 
-  if (state.checkEmail) {
-    return (
-      <div role="status" className="glass flex flex-col gap-2 rounded-3xl p-6 text-center">
-        <p className="font-display text-lg font-semibold">Confira seu e-mail</p>
-        <p className="text-fg-muted">
-          Enviamos um link de confirmação para <span className="text-fg">{state.checkEmail}</span>. Abra o link
-          para entrar no Ergo.
-        </p>
-      </div>
-    );
-  }
-
   return (
     <form action={formAction} noValidate className="flex flex-col gap-4">
       <AuthField

@@ -6,9 +6,9 @@ import { PageHeader } from "@/components/layout/PageHeader";
 
 export const metadata: Metadata = { title: "Perfil" };
 
-export default function PerfilPage() {
+export default function ProfilePage() {
   return (
-    <main className="mx-auto flex w-full max-w-5xl flex-col gap-8 px-5 pt-14 pb-8 md:px-8 xl:pt-12">
+    <main className="mx-auto flex w-full max-w-5xl flex-col gap-8 px-5 pt-6 pb-8 md:px-8 xl:pt-8">
       <PageHeader title="Perfil" description="Sua meta de tempo por questão e sua conta." />
 
       <form action={signOut} className="max-w-sm">

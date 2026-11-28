@@ -10,8 +10,16 @@
   --color-success: #7fd1a8;
   --color-danger: #f0a97a;
 
-  --color-glass: rgb(255 255 255 / 0.05);
   --color-glass-border: rgb(255 255 255 / 0.12);
+
+  /* Superfícies opacas: a mesma cor do branco/da cor translúcida sobre o fundo, mas sólida,
+     para as estrelas do fundo não aparecerem através dos cartões. */
+  --color-surface-dim: color-mix(in srgb, white 3%, var(--color-bg));
+  --color-surface: color-mix(in srgb, white 5%, var(--color-bg));
+  --color-surface-raised: color-mix(in srgb, white 8%, var(--color-bg));
+  --color-surface-accent: color-mix(in srgb, var(--color-accent) 15%, var(--color-bg));
+  --color-surface-success: color-mix(in srgb, var(--color-success) 15%, var(--color-bg));
+  --color-surface-danger: color-mix(in srgb, var(--color-danger) 15%, var(--color-bg));
 
   --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
@@ -35,35 +43,10 @@
     /* Barra de status translúcida do app instalado: o conteúdo não fica atrás dela. */
     padding-top: env(safe-area-inset-top);
     min-height: 100dvh;
-    background-color: var(--color-bg);
+    /* Sem cor de fundo aqui (o html já tem): ela seria pintada por cima das estrelas (z-index negativo). */
     color: var(--color-fg);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
-  }
-
-  body::before,
-  body::after {
-    content: "";
-    position: fixed;
-    z-index: -1;
-    border-radius: 9999px;
-    pointer-events: none;
-  }
-  body::before {
-    top: -10rem;
-    left: -8rem;
-    width: 28rem;
-    height: 28rem;
-    background: rgb(184 166 240 / 0.2);
-    filter: blur(110px);
-  }
-  body::after {
-    right: -10rem;
-    bottom: -8rem;
-    width: 32rem;
-    height: 32rem;
-    background: rgb(95 70 157 / 0.26);
-    filter: blur(120px);
   }
 
   h1,
@@ -90,14 +73,39 @@ body:has([data-app-nav]) .app-content {
   }
 }
 
-/* Safari: não animar opacity num ancestral de .glass, ou o desfoque some. */
+/* Visual de vidro com fundo opaco (nada de trás aparece): borda clara, linha de luz no topo e o
+   mesmo halo lilás da sombra do botão principal. */
 @utility glass {
-  background: var(--color-glass);
+  background: var(--color-surface);
   border: 1px solid var(--color-glass-border);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.1);
+  box-shadow:
+    0 8px 28px rgb(184 166 240 / 0.12),
+    inset 0 1px 0 rgb(255 255 255 / 0.2);
 }
+
+/* Cintilâncias do fundo: cada ponto acende e apaga no seu tempo. Ficam atrás de tudo, e o
+   opacity animado é só deles (nunca de um ancestral de .glass). */
+.sparkle {
+  position: absolute;
+  border-radius: 9999px;
+  background: #fff;
+  box-shadow: 0 0 8px 1px rgb(184 166 240 / 0.7);
+  opacity: 0;
+  animation: sparkle-twinkle var(--sparkle-duration) ease-in-out var(--sparkle-delay) infinite;
+}
+
+@keyframes sparkle-twinkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+}
+
 
 /* Tela de abertura. Tempos (2 × 1,8 s + 0,4 s de saída) iguais ao splashDurationMs do SplashScreen.tsx. */
 html[data-splash-seen] .splash-screen {
@@ -166,5 +174,34 @@ html[data-splash-seen] .splash-screen {
   to {
     opacity: 0;
     visibility: hidden;
+  }
+}
+
+/* Anel do resultado: o traço cresce do zero até a % de acerto (--ring-from = volta inteira). */
+.result-ring-fill {
+  animation: result-ring-fill 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+@keyframes result-ring-fill {
+  from {
+    stroke-dashoffset: var(--ring-from);
+  }
+}
+
+/* Roleta, só até o primeiro giro: um anel sai do centro e some, mostrando que basta tocar. */
+.wheel-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: wheel-pulse 1.8s ease-out infinite;
+}
+
+@keyframes wheel-pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1.6);
+    opacity: 0;
   }
 }

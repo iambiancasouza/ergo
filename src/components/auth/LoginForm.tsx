@@ -52,7 +52,6 @@ export function LoginForm() {
 }
 
 const errorMessages: Record<string, string> = {
-  link: "O link de confirmação expirou ou já foi usado. Entre com seu e-mail e senha, ou crie a conta de novo.",
   google: "Não foi possível entrar com o Google. Tente de novo.",
 };
 

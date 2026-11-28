@@ -9,7 +9,6 @@ import { createClient } from "@/lib/supabase/server";
 export type AuthFormState = {
   error?: string;
   fieldErrors?: Partial<Record<"name" | "email" | "password", string>>;
-  checkEmail?: string;
 };
 
 const loginSchema = z.object({
@@ -32,13 +31,10 @@ function authErrorMessage(code: string | undefined): string {
   switch (code) {
     case "invalid_credentials":
       return "E-mail ou senha incorretos.";
-    case "email_not_confirmed":
-      return "Confirme seu e-mail pelo link que enviamos antes de entrar.";
     case "user_already_exists":
       return "Já existe uma conta com esse e-mail.";
     case "weak_password":
       return "Essa senha é fraca demais. Tente uma mais longa.";
-    case "over_email_send_rate_limit":
     case "over_request_rate_limit":
       return "Muitas tentativas seguidas. Espere um pouco e tente de novo.";
     default:
@@ -82,25 +78,16 @@ export async function signUp(_previous: AuthFormState, formData: FormData): Prom
 
   const { name, email, password, timezone } = parsed.data;
 
-  // O link de confirmação volta para o endereço de onde a pessoa veio.
-  const origin = (await headers()).get("origin") ?? "";
-
   const supabase = await createClient();
-  const { data, error } = await supabase.auth.signUp({
+  const { error } = await supabase.auth.signUp({
     email,
     password,
-    options: {
-      // Lidos pelo gatilho handle_new_user, que cria o perfil.
-      data: { display_name: name, timezone },
-      emailRedirectTo: `${origin}/auth/confirm`,
-    },
+    // Lidos pelo gatilho handle_new_user, que cria o perfil.
+    options: { data: { display_name: name, timezone } },
   });
   if (error) return { error: authErrorMessage(error.code) };
 
-  // Sessão pronta = confirmação de e-mail desligada no Supabase.
-  if (data.session) redirect("/");
-
-  return { checkEmail: email };
+  redirect("/");
 }
 
 export async function signInWithGoogle() {
